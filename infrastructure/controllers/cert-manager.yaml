@@ -40,4 +40,5 @@ spec:
       keep: false
     # Fix bug I ran into where reading the dns seems to get in a CNAME loop on my local DNS.
     # TODO: Find and fix
-    extraArgs: '{--dns01-recursive-nameservers-only,--dns01-recursive-nameservers=1.1.1.1:53\,8.8.8.8:53}'
+    extraArgs:
+    - '{--dns01-recursive-nameservers-only,--dns01-recursive-nameservers=1.1.1.1:53\,8.8.8.8:53}'
