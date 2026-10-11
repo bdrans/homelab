@@ -1,0 +1,19 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: modern-certificates
+spec:
+  failurePolicy: Fail
+  rules:
+  # Set private key details for algorithm and size
+  - name: set-privateKey-details
+    match:
+      any:
+      - resources:
+          kinds:
+          - Certificate
+    mutate:
+      patchStrategicMerge:
+        spec:
+          privateKey:
+            +(algorithm): ECDSA
