@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: mealie
+  namespace: mealie
+spec:
+  interval: 10m
+  url: https://deimosfr.github.io/deimosfr-charts/
