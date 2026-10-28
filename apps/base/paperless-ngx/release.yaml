@@ -18,19 +18,20 @@ spec:
     env:
       TZ: "America/Denver" 
     ingress:
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-production
-      enabled: true
-      className: "traefik"
-      hosts:
-        - host: paperless.bdrans.com
-          paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - hosts:
-            - paperless.bdrans.com
-          secretName: paperless-cert
+      main:
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+        enabled: true
+        className: "traefik"
+        hosts:
+          - host: paperless.bdrans.com
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - paperless.bdrans.com
+            secretName: paperless-cert
     persistence:
       consume:
         storageClass: "truenas-nfs"
