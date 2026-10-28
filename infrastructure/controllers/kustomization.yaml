@@ -4,3 +4,4 @@ resources:
   - sealed-secrets.yaml
   - kyverno.yaml
   - cert-manager.yaml 
+  - truenas-csi-driver.yaml
