@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: paperless-ngx
+  namespace: paperless-ngx
+spec:
+  interval: 24h
+  url: oci://ghcr.io/gabe565/charts/paperless-ngx
+  layerSelector:
+    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+    operation: copy
+  ref:
+    semver: "0.x"

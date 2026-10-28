@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: paperless-ngx
+  namespace: paperless-ngx
+spec:
+  interval: 12h
+  install:
+    strategy:
+      name: RetryOnFailure
+  upgrade:
+    strategy:
+      name: RetryOnFailure
+  chartRef:
+    kind: OCIRepository
+    name: paperless-ngx
+  values:
+    env:
+      TZ: "America/Denver" 
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-production
+      enabled: true
+      className: "traefik"
+      hosts:
+        - host: paperless.bdrans.com
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - paperless.bdrans.com
+          secretName: paperless-cert
+    persistence:
+      consume:
+        storageClass: "truenas-nfs"
+      media:
+        storageClass: "truenas-nfs"
+      data:
+        storageClass: "truenas-nfs"
+      export:
+        storageClass: "truenas-nfs"
