@@ -35,12 +35,16 @@ spec:
       consume:
         storageClass: "truenas-nfs"
         accessMode: ReadWriteOnce
+        size: 4Gi
       media:
         storageClass: "truenas-nfs"
         accessMode: ReadWriteOnce
+        size: 8Gi
       data:
         storageClass: "truenas-nfs"
         accessMode: ReadWriteOnce
+        size: 1Gi
       export:
         storageClass: "truenas-nfs"
         accessMode: ReadWriteOnce
+        size: 1Gi
