@@ -6,6 +6,7 @@ provisioner: csi.truenas.io
 parameters:
   protocol: "nfs"
   pool: "MainStorage2024"
+  datasetPath: "KubernetesStorage"
   compression: "lz4"
   sync: "standard"
 allowVolumeExpansion: true
