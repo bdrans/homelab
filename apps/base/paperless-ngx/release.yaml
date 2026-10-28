@@ -34,9 +34,13 @@ spec:
     persistence:
       consume:
         storageClass: "truenas-nfs"
+        accessMode: ReadWriteOnce
       media:
         storageClass: "truenas-nfs"
+        accessMode: ReadWriteOnce
       data:
         storageClass: "truenas-nfs"
+        accessMode: ReadWriteOnce
       export:
         storageClass: "truenas-nfs"
+        accessMode: ReadWriteOnce
