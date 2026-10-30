@@ -15,10 +15,11 @@ spec:
     kind: OCIRepository
     name: paperless-ngx
   values:
-    config:
-      PAPERLESS_URL: https://paperless.bdrans.com
-      PAPERLESS_TIME_ZONE: America/Denver
-    existingSecret: paperless-ngx-secrets
+    paperless:
+      config:
+        PAPERLESS_URL: https://paperless.bdrans.com
+        PAPERLESS_TIME_ZONE: America/Denver
+      existingSecret: paperless-ngx-secrets
     ingress:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-production
