@@ -18,8 +18,7 @@ spec:
     config:
       PAPERLESS_URL: https://paperless.bdrans.com
       PAPERLESS_TIME_ZONE: America/Denver
-    existingSecret:
-      name: paperless-ngx-secrets
+    existingSecret: paperless-ngx-secrets
     ingress:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-production
