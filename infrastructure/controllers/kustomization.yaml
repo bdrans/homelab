@@ -5,3 +5,4 @@ resources:
   - kyverno.yaml
   - cert-manager.yaml 
   - truenas-csi-driver.yaml
+  - cloudnative-pg.yaml
