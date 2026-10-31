@@ -5,6 +5,7 @@ metadata:
 provisioner: csi.truenas.io
 parameters:
   protocol: "nfs"
+  nfs.rootSquash: "false"
   pool: "MainStorage2024"
   datasetPath: "KubernetesStorage"
   compression: "lz4"
