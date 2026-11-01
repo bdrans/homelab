@@ -20,6 +20,9 @@ spec:
         PAPERLESS_URL: https://paperless.bdrans.com
         PAPERLESS_TIME_ZONE: America/Denver
       existingSecret: paperless-ngx-secrets
+      readinessProbe:
+        periodSeconds: 5
+        failureThreshold: 120
     ingress:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-production
