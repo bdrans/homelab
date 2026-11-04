@@ -3,7 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - repository.yaml 
-  - release.yaml 
-  - models.yaml
-  - inferenceservice.yaml
-  - modelrouter.yaml
+  - release.yaml
