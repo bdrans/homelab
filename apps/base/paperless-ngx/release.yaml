@@ -20,6 +20,8 @@ spec:
         PAPERLESS_URL: https://paperless.bdrans.com
         PAPERLESS_TIME_ZONE: America/Denver
       existingSecret: paperless-ngx-secrets
+      image:
+        tag: 2.20.15
       readinessProbe:
         periodSeconds: 5
         failureThreshold: 120
