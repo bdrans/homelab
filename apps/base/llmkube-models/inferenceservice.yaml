@@ -13,4 +13,4 @@ spec:
   flashAttention: true
   parallelSlots: 1
   resources:
-    memory: 16Gi
+    memory: 24Gi

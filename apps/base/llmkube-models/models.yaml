@@ -8,4 +8,4 @@ spec:
   format: gguf
   quantization: Q4_K_M
   resources:
-    memory: 16Gi
+    memory: 24Gi
