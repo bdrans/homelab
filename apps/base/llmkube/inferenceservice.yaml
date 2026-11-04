@@ -1,0 +1,15 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: InferenceService
+metadata:
+  name: hermes-3-8b
+spec:
+  modelRef: hermes-3-8b
+  runtime: llamacpp
+  replicas: 1
+  priority: high
+  evictionProtection: true
+  contextSize: 131072
+  flashAttention: true
+  parallelSlots: 1
+  resources:
+    memory: 16Gi

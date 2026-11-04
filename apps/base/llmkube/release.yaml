@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: llmkube
+  namespace: llmkube
+spec:
+  interval: 1h
+  releaseName: llmkube
+  chartRef:
+    kind: OCIRepository
+    name: llmkube

@@ -1,0 +1,11 @@
+apiVersion: inference.llmkube.dev/v1alpha1
+kind: ModelRouter
+metadata:
+  name: router
+spec:
+  backends:
+    - name: hermes-3-8b
+      tier: local
+      inferenceServiceRef:
+        name: hermes-3-8b
+  defaultRoute: hermes-3-8b
