@@ -13,7 +13,7 @@ spec:
     config:
       providers:
         llmkube:
-          base_url: router-router-proxy.llmkube.svc.cluster.local:8080/v1
+          base_url: http://router-router-proxy.llmkube.svc.cluster.local:8080/v1
           key_env: OPENAI_API_KEY      # env var that holds the proxy key
           discover_models: true        # populate the model picker from /v1/models
       model:
