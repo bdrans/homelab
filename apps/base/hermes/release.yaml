@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: hermes
+  namespace: hermes
+spec:
+  interval: 1h
+  releaseName: hermes
+  chartRef:
+    kind: OCIRepository
+    name: hermes
+  values:
+    config:
+      providers:
+        llmkube:
+          base_url: router-router-proxy.llmkube.svc.cluster.local:8080/v1
+          key_env: OPENAI_API_KEY      # env var that holds the proxy key
+          discover_models: true        # populate the model picker from /v1/models
+      model:
+        provider: llmkube
+        # Must match a model name exposed by the proxy (see /v1/models).
+        default: hermes-3-8b
+      terminal:
+        backend: local
+    env:
+      OPENAI_API_KEY: "NONE"
+    extraEnvFrom:
+    - secretRef:
+        name: hermes-secrets
+
+    extraEnv:
+    # - name: TELEGRAM_HOME_CHANNEL       # chat id for cron / notification delivery
+    #   value: "000000000"                # DUMMY - your chat id
+    - name: TELEGRAM_ALLOWED_USERS      # comma-separated user ids allowed to talk
+      value: "8366251904"                # DUMMY - your Telegram user id
+        
