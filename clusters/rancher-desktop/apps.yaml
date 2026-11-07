@@ -70,3 +70,21 @@ spec:
   path: ./base/llmkube-models
   prune: true
   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: hermes
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: llmkube-models
+  interval: 1h
+  retryInterval: 2m
+  timeout: 5m
+  sourceRef:
+    kind: ExternalArtifact
+    name: apps
+  path: ./base/hermes
+  prune: true
+  wait: true
