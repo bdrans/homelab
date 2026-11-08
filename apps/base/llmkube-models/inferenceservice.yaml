@@ -14,3 +14,5 @@ spec:
   parallelSlots: 1
   resources:
     memory: 24Gi
+  extraArgs:
+  - "--jinja"
