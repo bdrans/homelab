@@ -4,3 +4,9 @@ resources:
   - models.yaml
   - inferenceservice.yaml
   - modelrouter.yaml
+configMapGenerator:
+  - name: hermes-3-8b-tool-template
+    files:
+      - hermes3-tool-use.jinja
+configurations:
+  - kustomizeconfig.yaml

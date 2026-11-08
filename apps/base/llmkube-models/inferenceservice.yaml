@@ -14,5 +14,15 @@ spec:
   parallelSlots: 1
   resources:
     memory: 24Gi
+  jinja: true
   extraArgs:
-  - "--jinja"
+  - --chat-template-file
+  - /etc/llama-templates/hermes3-tool-use.jinja
+  extraVolumes:
+  - name: hermes-3-8b-tool-template
+    configMap:
+      name: hermes-3-8b-tool-template
+  extraVolumeMounts:
+  - name: hermes-3-8b-tool-template
+    mountPath: /etc/llama-templates
+    readOnly: true

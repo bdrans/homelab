@@ -1,0 +1,7 @@
+nameReference:
+- kind: ConfigMap
+  fieldSpecs:
+  - group: inference.llmkube.dev
+    version: v1alpha1
+    kind: InferenceService
+    path: spec/extraVolumes/configMap/name
